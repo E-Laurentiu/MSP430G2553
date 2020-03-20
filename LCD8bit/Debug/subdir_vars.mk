@@ -6,7 +6,7 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CMD_SRCS += \
-../lnk_msp430g2412.cmd 
+../lnk_msp430g2553.cmd 
 
 C_SRCS += \
 ../LCD8bit.c \

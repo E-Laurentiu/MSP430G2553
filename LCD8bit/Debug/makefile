@@ -13,7 +13,7 @@ ORDERED_OBJS += \
 "./LCD8bit.obj" \
 "./Timer.obj" \
 "./main.obj" \
-"../lnk_msp430g2412.cmd" \
+"../lnk_msp430g2553.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -142,7 +142,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 LCD8bit.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2412__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"LCD8bit.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccs930/ccs/ccs_base/msp430/include" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/lib" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCD8bit_linkInfo.xml" --use_hw_mpy=none --rom_model -o "LCD8bit.out" $(ORDERED_OBJS)
+	"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"LCD8bit.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccs930/ccs/ccs_base/msp430/include" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/lib" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCD8bit_linkInfo.xml" --use_hw_mpy=none --rom_model -o "LCD8bit.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 

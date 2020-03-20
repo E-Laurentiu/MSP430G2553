@@ -49,7 +49,7 @@ void UART0_SendString_UnknownLenght(char *buff)
 }
 
 char UART0_ReadChar(){
-    //    while(!(UCA1IFG&UCRXIFG));
+    while (!(IFG2&UCA0TXIFG));                // USCI_A0 TX buffer ready?
     return UCA0RXBUF;
 
 }

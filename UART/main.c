@@ -12,9 +12,9 @@ int main(void)
     initClock();
     UART0_Init();
 
-    UART0_SendString_UnknownLenght("Aka45");
+    UART0_SendString_UnknownLenght("Hello World");
     UART0_SendChar('\n');
-    UART0_SendInt(4621);
+    UART0_SendInt(1234);
 
 
 }

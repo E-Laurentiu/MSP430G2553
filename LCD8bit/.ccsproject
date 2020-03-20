@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?ccsproject version="1.0"?>
 <projectOptions>
-	<ccsVersion value="9.1.0"/>
+	<ccsVersion value="9.3.0"/>
 	<deviceVariant value="MSP430G2553"/>
 	<deviceFamily value="MSP430"/>
 	<deviceEndianness value="little"/>
-	<codegenToolVersion value="18.12.2.LTS"/>
+	<codegenToolVersion value="18.12.4.LTS"/>
 	<isElfFormat value="true"/>
 	<connection value="common/targetdb/connections/TIMSP430-USB.xml"/>
 	<linkerCommandFile value="lnk_msp430g2553.cmd"/>
@@ -13,6 +13,5 @@
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate_msp430"/>
 	<filesToOpen value="main.c"/>
-	<origin value="C:/Users/E.Laurentiu/workspace_v9/MSP430G2ET/3.LDC(8_bit)"/>
 	<isTargetManual value="false"/>
 </projectOptions>
