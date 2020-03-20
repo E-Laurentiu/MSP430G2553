@@ -8,13 +8,12 @@ void initClock();
 int main(void)
 {
     WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
-    initClock();
 
+    initClock();
     UART0_Init();
 
     UART0_SendString_UnknownLenght("Aka45");
     UART0_SendChar('\n');
-
     UART0_SendInt(4621);
 
 
