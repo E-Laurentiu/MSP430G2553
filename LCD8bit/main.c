@@ -14,11 +14,11 @@ int main(void)
      LCD8bit_Cursor_Position(1,4);
      LCD8bit_SendString("World");
 
-     Timer_Delay(65535);
+     Timer_Delay(65535);            //~2sec
      LCD8bit_Clear();
      LCD8bit_Cursor_Off();
 
-     Timer_Delay(65535);
+     Timer_Delay(65535);            //~2sec
      LCD8bit_SendString("Line 1");
      LCD8bit_Cursor_Position(1,4);
      LCD8bit_SendString("Line 2");

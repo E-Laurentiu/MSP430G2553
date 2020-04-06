@@ -1,5 +1,15 @@
+/*
+ *
+ * I've let the delays a bit longer(you can shorten the delays and it would still work)
+ * The ACK (external 32768 Hz crystal) can be unstable because of the enviroment
+ *  so if you face problems use __delay_cycles(cycles) instead
+ *                                                           (cycles = time in us)  if smclk~1MHz
+ *__delays work only if mclk~1MHz
+ */
+
 #include"LCD8bit.h"
 #include"Timer.h"
+
 
 void LCD8bit_Init(){
 
@@ -15,7 +25,7 @@ void LCD8bit_Init(){
     P2DIR  |=   0x07;
     P2OUT  &= ~(0x07);
 
-    //~1 sec delay ( lcd boots slower that microcontroller)
+    //~0.5 sec delay ( lcd boots slower that microcontroller)
     Timer_Delay(16384);
 
     LCD8bit_Cmd(0x38);                      //8-bit 2line display 5x7 font
@@ -34,7 +44,7 @@ void LCD8bit_Cmd(unsigned char command) {   //RS=0 -> send command
     P2OUT |= 0x04;                          // En=1
     Timer_Delay(3);                         //~100us
     P2OUT &= ~(0x07);                       //En=0
-    if(command<4)  Timer_Delay(52);         //~3000us (first commands require more time)
+    if(command<4)  Timer_Delay(50);         //~3000us (first commands require more time)
     else __delay_cycles(2);                 //~80us
 
 }

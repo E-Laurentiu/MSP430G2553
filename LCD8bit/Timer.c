@@ -1,7 +1,7 @@
 /*
  *
  *AClk = 32.768 kHz
- *1 period= 2*(1/32768) ~ = 61.03515625 us
+ *1 period=(1/32768) ~ = 30.517578125 us
  *
  */
 
@@ -17,7 +17,7 @@ inline void Timer_Stop(){
 }
 
 void Timer_Delay(unsigned int calculatedValue ){
-    //calculatedValue = delayWanted/61.03515625
+    //calculatedValue = delayWanted/30.517578125    (delayWanted = [us])
     //max(calculatedValue) = 2^16 = 65536
 
     CCR0 = calculatedValue-1;

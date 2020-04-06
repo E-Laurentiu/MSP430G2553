@@ -1,9 +1,15 @@
 /*
- *__delays work only if mclk~1Mhz
+ *
+ * I've let the delays a bit longer(you can shorten the delays and it would still work)
+ * The ACK (external 32768 Hz crystal) can be unstable because of the enviroment
+ *  so if you face problems use __delay_cycles(cycles) instead
+ *                                                           (cycles = time in us)  if smclk~1MHz
+ *__delays work only if mclk~1MHz
  */
 
 #include <LCD.h>
 #include"Timer.h"
+
 
 void LCD4bit_Init(){
 
@@ -14,7 +20,7 @@ void LCD4bit_Init(){
     P1DIR  |=   0xF7;
     P1OUT  &= ~(0x08);
 
-    //~1 sec delay ( lcd boots slower that microcontroller)
+    //~0.5 sec delay ( lcd boots slower that microcontroller)
     Timer_Delay(16384);
 
     LCD4bit_Cmd(0x02);         // Initialize Lcd in 4-bit mode
