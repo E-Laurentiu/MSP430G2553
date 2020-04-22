@@ -15,5 +15,6 @@ void UART0_SendString_UnknownLenght(char *buff);
 char UART0_ReadChar();
 void UART0_SendInt(int data);
 void UART0_SendFloat(float data);
+void UART0_SendNewLine();
 
 #endif /* UART0_H_ */

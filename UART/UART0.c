@@ -57,9 +57,9 @@ char UART0_ReadChar(){
 
 void UART0_SendInt(int data){
     if(data>=0){
-        int i,j=0;
-        int lastdigit ;
-        char string[10];
+        int i=0;
+        unsigned int lastdigit ;
+        char string[6]={0}; // assign 6 bytes for max 6 digits
 
         while(data!=0){
             lastdigit=data%10;
@@ -68,7 +68,7 @@ void UART0_SendInt(int data){
             i++;
         }
         i--;
-        for(j=0;i!=-1;j++,i--){
+        for(;i>=0;i--){
             UART0_SendChar(string[i]+'0');
         }
 
@@ -84,6 +84,12 @@ void UART0_SendFloat(float data)
 }
 
 
+
+void UART0_SendNewLine(){
+
+    UART0_SendChar('\r');
+    UART0_SendChar('\n');
+}
 
 
 

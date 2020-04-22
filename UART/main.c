@@ -10,11 +10,12 @@ int main(void)
     WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
 
     initClock();
-    UART0_Init();
 
+    UART0_Init();
     UART0_SendString_UnknownLenght("Hello World");
-    UART0_SendChar('\n');
+    UART0_SendNewLine();
     UART0_SendInt(1234);
+    UART0_SendNewLine();
 
 
 }
